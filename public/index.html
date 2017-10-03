@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ceruleanstorm">
+<head>
+  <title>Home | Cerulean Storm</title>
+  <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+</head>
+<body>
+  <div class="nav-header">
+    <nav>
+      <ul id="cerulean-nav">
+        <li><a href="https://ceruleanstorm.com">Home</a></li>
+        <li><a href="https://ceruleanstorm.com/artists">Music</a></li>
+        <li><a href="https://ceruleanstorm.com/buy-art">Visual Art</a></li>
+        <li><a href="https://ceruleanstorm.com/forum-1">Writing Forum</a></li>
+        <li><a href="#">Login/Sign Up!</a></li>
+      </ul>
+    </nav>
+  </div>
+  <ui-view></ui-view>
+  <footer>
+    ©2017 by Cerulean Storm.
+  </footer>
+</body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+  <script src="./main.js"></script>
+  <script src="./router.js"></script>
+</html>
