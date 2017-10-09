@@ -1,3 +1,7 @@
+h4 {
+  text-align: center;
+}
+
 #cerulean-title {
   font-family: "Acme", sans-serif;
   text-align: center;
@@ -25,14 +29,6 @@
   border-radius: 5px;
 }
 
-#cerulean-contact {
-  color: #fff;
-  background-color: #000;
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
-}
-
 #contact-head {
   font-size: 32px;
   font-family: "Acme", sans-serif;
@@ -41,10 +37,29 @@
 
 #short-message {
   width: 226px;
+  height: 34px;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 2px;
 }
 
 #wide-message {
   width: 462px;
+  height: 34px;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
+#widest-message {
+  width: 462px;
+  height: 144px;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 2px;
 }
 
 .about-bg {
@@ -60,4 +75,20 @@
   font-size: 18px;
   padding: 30px 50px 30px 50px;
   border-radius: 20px;
+}
+
+.cerulean-contact {
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.cerulean-contact p {
+  font-size: 20px;
+}
+
+.contact-format {
+  max-width: 462px;
 }
