@@ -9,7 +9,23 @@ module.exports = new Auth0Strategy(
     clientSecret: config.clientSecret,
     callbackURL: "/"
   },
-  function(accessToken, refreshToken, extraParams, profile, done) {
-    return done(null, profile);
+  (accessToken, refreshToken, extraParams, profile, done) => {
+    console.log(profile.id);
+    const db = app.get("db");
+    db.getUserByAuthId([profile.id]).then((user, err) => {
+      console.log(`INITIAL: ${user}`);
+      if (!user[0]) {
+        console.log(`CREATING USER`);
+        db
+          .createUserByAuth([profile.displayName, profile.id])
+          .then((user, err) => {
+            console.log(`USER CREATED: ${user[0]}`);
+            return done(err, user[0]);
+          });
+      } else {
+        console.log(`FOUND USER: ${user[0]}`);
+        return done(err, user[0]);
+      }
+    });
   }
 );

@@ -6,7 +6,7 @@ const massive = require("massive");
 const passport = require("passport");
 const strategy = require(`${__dirname}/strategy.js`);
 const config = require(`${__dirname}/config.js`);
-const { secret } = config;
+const { secret, dbUser, database } = config;
 
 const port = 3000;
 
@@ -21,7 +21,7 @@ massive(connectionString).then(db => app.set("db", db));
 
 app.use(
   session({
-    secret: config.secret,
+    secret,
     resave: true,
     saveUninitialized: true
   })
