@@ -22,6 +22,29 @@
   padding: 10px 15px;
   background-color: #e7e7e7;
   border: none;
+  border-radius: 5px;
+}
+
+#cerulean-contact {
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+#contact-head {
+  font-size: 32px;
+  font-family: "Acme", sans-serif;
+  text-align: center;
+}
+
+#short-message {
+  width: 226px;
+}
+
+#wide-message {
+  width: 462px;
 }
 
 .about-bg {
@@ -36,4 +59,5 @@
   font-family: sans-serif;
   font-size: 18px;
   padding: 30px 50px 30px 50px;
+  border-radius: 20px;
 }
