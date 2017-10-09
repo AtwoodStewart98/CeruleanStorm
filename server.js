@@ -10,10 +10,14 @@ const { secret } = config;
 
 const port = 3000;
 
+const connectionString = `postgres://${dbUser}@localhost/${database}`;
+
 const app = express();
 
 app.use(bodyParser());
 app.use(cors());
+
+massive(connectionString).then(db => app.set("db", db));
 
 app.use(
   session({
