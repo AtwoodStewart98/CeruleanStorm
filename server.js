@@ -4,12 +4,36 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const massive = require("massive");
 const passport = require("passport");
-const Auth0Strategy = require("passport-auth0");
-const config = require("./config");
+const strategy = require(`${__dirname}/strategy.js`);
+const config = require(`${__dirname}/config.js`);
+const { secret } = config;
 
 const port = 3000;
 
 const app = express();
+
+app.use(bodyParser());
+app.use(cors());
+
+app.use(
+  session({
+    secret: config.secret,
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(strategy);
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
 
 app.listen(port, () => {
   console.log(`It's Over ${port}!`);
