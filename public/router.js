@@ -6,14 +6,6 @@ angular
       .state("home", {
         url: "/",
         templateUrl: "./components/home/homeTmpl.html"
-        // controller: "homeCtrl"
-        // resolve: {
-        //   user: mainSrvc =>
-        //     mainSrvc
-        //       .getUser()
-        //       .then(response => response.data)
-        //       .catch(err => err)
-        // }
       })
       .state("music", {
         url: "/music",
@@ -28,5 +20,10 @@ angular
       .state("writing", {
         url: "/writing-forum",
         templateUrl: "./components/writing/writingTmpl.html"
+      })
+      .state("login", {
+        url: "/login",
+        templateUrl: "./components/login/loginTmpl.html",
+        controller: "loginCtrl"
       });
   });
