@@ -2,6 +2,10 @@ h4 {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 #cerulean-title {
   font-family: "Acme", sans-serif;
   text-align: center;
@@ -42,6 +46,7 @@ h4 {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 2px;
+  margin-bottom: 10px;
 }
 
 #wide-message {
@@ -51,6 +56,7 @@ h4 {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 2px;
+  margin-bottom: 10px;
 }
 
 #widest-message {
@@ -60,6 +66,39 @@ h4 {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+#soundcloud {
+  width: auto;
+  height: 55px;
+  margin-bottom: -3px;
+  padding-right: 3px;
+}
+
+#facebook {
+  width: auto;
+  height: 48px;
+}
+
+#twitter {
+  width: auto;
+  height: 48px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#youtube {
+  width: auto;
+  height: 46px;
+  border-radius: 2px;
+}
+
+#instagram {
+  width: auto;
+  height: 46px;
+  border-radius: 2px;
+  padding-left: 10px;
 }
 
 .about-bg {

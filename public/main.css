@@ -37,6 +37,9 @@ li a:visited:hover {
 
 footer {
   text-align: center;
+  background-color: #000;
+  color: #fff;
+  padding-top: 30px;
 }
 
 #cerulean-nav {
@@ -48,4 +51,10 @@ footer {
 
 .nav-header {
   background-color: #000;
+}
+
+.sub-footer {
+  font-size: 12px;
+  color: #a9a9a9;
+  padding: 10px 0 20px 0;
 }

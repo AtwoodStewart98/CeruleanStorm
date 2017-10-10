@@ -1,0 +1,50 @@
+.forum-box {
+  margin: 0 auto;
+  width: 980px;
+  background-color: #032f5a;
+  padding-bottom: 120px;
+}
+
+.forum-box h1 {
+  margin-top: 0;
+  padding-top: 50px;
+  color: #fff;
+  font-family: "Acme", sans-serif;
+  font-size: 72px;
+  text-align: center;
+}
+
+.forum-selectors {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.forum-selectors p {
+  padding: 15px;
+}
+
+.forum-selectors p a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.forum-views {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.forum-views div {
+  padding: 50px;
+  margin: 0 40px;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  border-radius: 3px;
+}
+
+.forum-views a {
+  text-decoration: none;
+  color: #000;
+}
