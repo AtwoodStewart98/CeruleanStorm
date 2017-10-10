@@ -11,9 +11,32 @@ ul {
   list-style: none;
 }
 
-li {
+li a:link {
+  color: #2a52be;
+  text-decoration: none;
   /*border-top: 2px solid #2a52be;
   border-bottom: 2px solid #2a52be;*/
+}
+
+li a:hover {
+  color: #fff;
+  transition: 0.5s;
+  background-color: #2a52be;
+}
+
+li a:visited {
+  color: #2a52be;
+  text-decoration: none;
+}
+
+li a:visited:hover {
+  color: #fff;
+  transition: 0.5s;
+  background-color: #2a52be;
+}
+
+footer {
+  text-align: center;
 }
 
 #cerulean-nav {
