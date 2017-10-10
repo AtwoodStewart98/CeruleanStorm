@@ -1,3 +1,1 @@
-angular
-  .module("ceruleanstorm")
-  .controller("loginCtrl", function($scope, loginSrvc) {});
+angular.module("ceruleanstorm").controller("loginCtrl", function($scope, loginSrvc) {});

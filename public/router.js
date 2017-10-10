@@ -24,6 +24,13 @@ angular
       .state("login", {
         url: "/login",
         templateUrl: "./components/login/loginTmpl.html",
-        controller: "loginCtrl"
+        controller: "loginCtrl",
+        resolve: {
+          user: loginSrvc =>
+            loginSrvc
+              .getUser()
+              .then(resp => console.log(resp.data))
+              .catch(err => err)
+        }
       });
   });

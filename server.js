@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const massive = require("massive");
 const passport = require("passport");
 const strategy = require(`${__dirname}/strategy.js`);
+const Auth0Strategy = require("passport-auth0");
 const config = require(`${__dirname}/config.js`);
 const { secret, dbUser, database } = config;
 
@@ -13,6 +14,8 @@ const port = 3000;
 const connectionString = `postgres://${dbUser}@localhost/${database}`;
 
 const app = express();
+
+app.use("/", express.static(`${__dirname}/public`));
 
 app.use(bodyParser());
 app.use(cors());
@@ -37,6 +40,50 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((obj, done) => {
   done(null, obj);
+});
+
+// app.get("/auth", passport.authenticate("auth0"), (req, res, next) => {
+//   res.json('ok')
+// });
+
+// app.get("/auth", passport.authenticate('auth0', { scope: 'openid profile' }));
+
+app.get('/auth',
+  passport.authenticate('auth0', {}), function (req, res, done) {
+
+ console.log("req.user", req.user._json.sub)
+  const db = req.app.get('db');
+
+ db.getUserByAuthId([req.user._json.sub])
+    .then((user, err) => {
+      console.log("getting user", user)
+      if (!user[0]) {
+        db.createUserByAuth([req.user._json.sub])
+          .then((user, err) => {
+            console.log("creating user", user)
+            return done (err, user[0])
+          })
+      } else {
+        return done (err, user[0])
+      }
+    }).catch((err => console.log('Error here')))
+
+ res.redirect("/");
+
+});
+
+app.get(
+  "/auth/callback",
+  passport.authenticate("auth0", { successRedirect: "/" }),
+  (req, res) => {
+    res.status(200).json(req.user);
+  }
+);
+
+app.get("/auth/me", (req, res) => {
+  console.log("Hit");
+  if (!req.user) return res.status(401).json({ err: "User Not Authenticated" });
+  res.status(200).json(req.user);
 });
 
 app.listen(port, () => {
