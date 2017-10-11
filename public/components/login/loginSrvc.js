@@ -1,5 +1,4 @@
 angular.module("ceruleanstorm").service("loginSrvc", function($http) {
-  console.log("Gotcha");
   this.getUser = () =>
     $http
       .get("/auth/me")

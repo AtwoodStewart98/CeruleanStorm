@@ -4,7 +4,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const massive = require("massive");
 const passport = require("passport");
-const strategy = require(`${__dirname}/strategy.js`);
 const Auth0Strategy = require("passport-auth0");
 const config = require(`${__dirname}/config.js`);
 const { secret, dbUser, database, domain, clientID, clientSecret } = config;
@@ -41,9 +40,9 @@ passport.use(
       callbackURL: "/auth/callback"
     },
     (accessToken, refreshToken, extraParams, profile, done) => {
-      console.log(profile.authid);
+      console.log(profile);
       const db = app.get("db");
-      db.getUserByAuthId([profile.authid]).then((user, err) => {
+      db.getUserByAuthId([profile.id]).then((user, err) => {
         console.log(`INITIAL: ${user}`);
         if (!user[0]) {
           console.log(`CREATING USER`);

@@ -32,7 +32,7 @@ angular
           user: loginSrvc =>
             loginSrvc
               .getUser()
-              .then(resp => console.log(resp.data))
+              .then(resp => resp.data)
               .catch(err => err)
         }
       });
