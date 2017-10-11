@@ -7,8 +7,7 @@ const passport = require("passport");
 const strategy = require(`${__dirname}/strategy.js`);
 const Auth0Strategy = require("passport-auth0");
 const config = require(`${__dirname}/config.js`);
-const nodemailer = require("nodemailer");
-const { secret, dbUser, database } = config;
+const { secret, dbUser, database, domain, clientID, clientSecret } = config;
 
 const port = 3000;
 
@@ -33,7 +32,35 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(strategy);
+passport.use(
+  new Auth0Strategy(
+    {
+      domain,
+      clientID,
+      clientSecret,
+      callbackURL: "/auth/callback"
+    },
+    (accessToken, refreshToken, extraParams, profile, done) => {
+      console.log(profile.authid);
+      const db = app.get("db");
+      db.getUserByAuthId([profile.authid]).then((user, err) => {
+        console.log(`INITIAL: ${user}`);
+        if (!user[0]) {
+          console.log(`CREATING USER`);
+          db
+            .createUserByAuth([profile.displayName, profile.id])
+            .then((user, err) => {
+              console.log(`USER CREATED: ${user[0]}`);
+              return done(err, user[0]);
+            });
+        } else {
+          console.log(`FOUND USER: ${user[0]}`);
+          return done(err, user[0]);
+        }
+      });
+    }
+  )
+);
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -43,33 +70,7 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
-// app.get("/auth", passport.authenticate("auth0"), (req, res, next) => {
-//   res.json('ok')
-// });
-
-// app.get("/auth", passport.authenticate('auth0', { scope: 'openid profile' }));
-
-app.get("/auth", passport.authenticate("auth0", {}), function(req, res, done) {
-  console.log("req.user", req.user._json.sub);
-  const db = req.app.get("db");
-
-  db
-    .getUserByAuthId([req.user._json.sub])
-    .then((user, err) => {
-      console.log("getting user", user);
-      if (!user[0]) {
-        db.createUserByAuth([req.user._json.sub]).then((user, err) => {
-          console.log("creating user", user);
-          return done(err, user[0]);
-        });
-      } else {
-        return done(err, user[0]);
-      }
-    })
-    .catch(err => console.log("Error here"));
-
-  res.redirect("/");
-});
+app.get("/auth", passport.authenticate("auth0"));
 
 app.get(
   "/auth/callback",
@@ -84,33 +85,6 @@ app.get("/auth/me", (req, res) => {
   if (!req.user) return res.status(401).json({ err: "User Not Authenticated" });
   res.status(200).json(req.user);
 });
-
-// NODEMAILER FUNCTION
-// nodemailer.createTestAccount((err, account) => {
-//   let transporter = nodemailer.createTransport({
-//     host: "contact@ceruleanstorm.com",
-//     port: 465,
-//     secure: true,
-//     auth: {
-//       user: account.user,
-//       pass: account.pass
-//     }
-//   });
-//   let mailOptions = {
-//     from: "'home.name' <home.email>",
-//     to: "contact@ceruleanstorm.com",
-//     subject: "home.subject",
-//     text: "home.message",
-//     html: "<b>home.message</b>"
-//   };
-//   transporter.sendMail(mailOptions, (error, info) => {
-//     if (error) {
-//       return console.log(error);
-//     }
-//     console.log("Message sent: %s", info.messageId);
-//     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-//   });
-// });
 
 app.listen(port, () => {
   console.log(`It's Over ${port}!`);

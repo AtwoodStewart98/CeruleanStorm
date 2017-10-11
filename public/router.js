@@ -9,8 +9,11 @@ angular
       })
       .state("music", {
         url: "/music",
-        templateUrl: "./components/artists-music/musicTmpl.html",
-        controller: "musicCtrl"
+        templateUrl: "./components/artists-music/musicTmpl.html"
+      })
+      .state("artist", {
+        url: "/music/:artist",
+        templateUrl: "./components/artists-music/artistTmpl.html"
       })
       .state("art", {
         url: "/visual-art",
