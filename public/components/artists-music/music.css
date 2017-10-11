@@ -1,0 +1,29 @@
+#cinema4theblind {
+  width: 260px;
+  height: auto;
+}
+
+#nessen {
+  width: 260px;
+  height: auto;
+}
+
+.music-views {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.music-views h2 {
+  text-align: center;
+  padding: 10% 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  width: 260px;
+  background-color: #292929;
+}
+
+.music-box {
+  padding: 40px 60px;
+  background-color: #000;
+}
