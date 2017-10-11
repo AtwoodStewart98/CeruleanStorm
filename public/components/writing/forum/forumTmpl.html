@@ -1,0 +1,22 @@
+<section>
+  <div class="writers-block">
+    <h1>WRITING</h1>
+    <p ng-if="user.authid">
+      Browse here to read works written by and for content creators!
+    </p>
+    <p ng-if="!user.authid">
+      Consider becoming a member to view works written by and for content creators here!
+    </p>
+  </div>
+</section>
+<!-- Include ng-if user.authid when working -->
+<section ng-repeat="item in posts">
+  <section>
+    <div>
+      <h1>{{item.user}}</h1>
+      <p>
+        {{item.written_text}}
+      </p>
+    </div>
+  </section>
+</section>

@@ -89,8 +89,9 @@ a {
   background-color: #000;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  padding-top: 50px;
+  margin: 50px 0px 20px;
+  padding: 50px 0px;
+  border-bottom: 1px solid #a9a9a9;
 }
 
 .cerulean-contact p {

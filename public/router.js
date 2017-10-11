@@ -22,7 +22,13 @@ angular
       })
       .state("writing", {
         url: "/writing-forum",
-        templateUrl: "./components/writing/writingTmpl.html"
+        templateUrl: "./components/writing/writingTmpl.html",
+        controller: "writingCtrl"
+      })
+      .state("forum", {
+        url: "/writing-forum/writing",
+        templateUrl: "./components/writing/forum/forumTmpl.html",
+        controller: "writingCtrl"
       })
       .state("login", {
         url: "/login",

@@ -42,12 +42,12 @@ passport.use(
     (accessToken, refreshToken, extraParams, profile, done) => {
       console.log(profile);
       const db = app.get("db");
-      db.getUserByAuthId([profile.id]).then((user, err) => {
+      db.getUserByAuthId([profile._json.sub]).then((user, err) => {
         console.log(`INITIAL: ${user}`);
         if (!user[0]) {
           console.log(`CREATING USER`);
           db
-            .createUserByAuth([profile.displayName, profile.id])
+            .createUserByAuth([profile.displayName, profile._json.sub])
             .then((user, err) => {
               console.log(`USER CREATED: ${user[0]}`);
               return done(err, user[0]);
@@ -75,6 +75,7 @@ app.get(
   "/auth/callback",
   passport.authenticate("auth0", { successRedirect: "/" }),
   (req, res) => {
+    console.log("Server:", req.user);
     res.status(200).json(req.user);
   }
 );
@@ -83,6 +84,20 @@ app.get("/auth/me", (req, res) => {
   console.log("Hit");
   if (!req.user) return res.status(401).json({ err: "User Not Authenticated" });
   res.status(200).json(req.user);
+});
+
+app.get("/auth/logout", (req, res) => {
+  req.logout();
+  req.redirect("/");
+});
+
+app.get("/writing-forum/writing", (req, res, next) => {
+  console.log("Made it");
+  const db = app.get("db");
+  db
+    .getForumPosts()
+    .then(response => res.status(200).json(response))
+    .catch(error => console.log("Error"));
 });
 
 app.listen(port, () => {

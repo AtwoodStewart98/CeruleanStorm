@@ -1,0 +1,13 @@
+.writers-block {
+  margin: 0 auto;
+  width: 980px;
+  background-color: #032f5a;
+  color: #fff;
+  text-align: center;
+}
+
+.writers-block h1 {
+  margin-top: 0;
+  font-size: 72px;
+  font-family: "Acme", sans-serif;
+}
