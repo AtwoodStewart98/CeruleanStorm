@@ -1,0 +1,40 @@
+#cinema4theblind {
+  width: 260px;
+  height: auto;
+}
+
+#nessen {
+  width: 260px;
+  height: auto;
+}
+
+.music-title {
+  font-size: 42px;
+  font-family: "Acme", sans-serif;
+  color: #b9ebff;
+  text-align: center;
+  text-shadow: #000 2px 2px 0, #000 1px -1px 0, #000 -1px 1px 0,
+    #000 -1px -1px 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.music-views {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.music-views h2 {
+  text-align: center;
+  padding: 10% 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  width: 260px;
+  background-color: #292929;
+}
+
+.music-box {
+  padding: 40px 60px;
+  margin: 20px 0px 60px;
+  background-color: #000;
+}

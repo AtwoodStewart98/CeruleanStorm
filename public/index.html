@@ -4,8 +4,11 @@
   <title>Home | Cerulean Storm</title>
   <link rel="stylesheet" href="main.css" />
   <link rel="stylesheet" href="./components/home/home.css" />
+  <link rel="stylesheet" href="./components/artists-music/music.css" />
   <link rel="stylesheet" href="./components/writing/writing.css" />
+  <link rel="stylesheet" href="./components/writing/forum/forum.css" />
   <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 <body>
   <div class="nav-header">
@@ -15,7 +18,7 @@
         <li><a ui-sref="music">Music</a></li>
         <li><a ui-sref="art">Visual Art</a></li>
         <li><a ui-sref="writing">Writing Forum</a></li>
-        <li><a href="login">Login/Sign Up!</a></li>
+        <li><a href="/auth">Login/Sign Up!</a></li>
       </ul>
     </nav>
   </div>
@@ -48,4 +51,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
   <script src="./router.js"></script>
   <script src="./components/login/loginCtrl.js"></script>
+  <script src="./components/login/loginSrvc.js"></script>
+  <script src="./components/writing/writingCtrl.js"></script>
+  <script src="./components/writing/writingSrvc.js"></script>
 </html>

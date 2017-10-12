@@ -9,8 +9,11 @@ angular
       })
       .state("music", {
         url: "/music",
-        templateUrl: "./components/artists-music/musicTmpl.html",
-        controller: "musicCtrl"
+        templateUrl: "./components/artists-music/musicTmpl.html"
+      })
+      .state("artist", {
+        url: "/music/:artist",
+        templateUrl: "./components/artists-music/artistTmpl.html"
       })
       .state("art", {
         url: "/visual-art",
@@ -21,9 +24,28 @@ angular
         url: "/writing-forum",
         templateUrl: "./components/writing/writingTmpl.html"
       })
+      .state("forum", {
+        url: "/writing-forum/writing",
+        templateUrl: "./components/writing/forum/forumTmpl.html",
+        controller: "writingCtrl",
+        resolve: {
+          user: loginSrvc =>
+            loginSrvc
+              .getUser()
+              .then(resp => resp.data)
+              .catch(err => err)
+        }
+      })
       .state("login", {
         url: "/login",
         templateUrl: "./components/login/loginTmpl.html",
-        controller: "loginCtrl"
+        controller: "loginCtrl",
+        resolve: {
+          user: loginSrvc =>
+            loginSrvc
+              .getUser()
+              .then(resp => resp.data)
+              .catch(err => err)
+        }
       });
   });

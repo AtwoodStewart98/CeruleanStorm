@@ -1,7 +1,8 @@
 body {
-  background-image: url("http://natbg.com/wp-content/uploads/2016/06/nature-lightning-storm-mountains-rain-high-quality-picture.jpg");
+  background-image: url("https://nebula.wsimg.com/6516da26b7ac3d5d0be0b0ad24bd7d1f?AccessKeyId=9D31EB17C2676763FE5A&disposition=0&alloworigin=1");
   background-size: 100%;
   background-repeat: no-repeat;
+  background-color: #000;
   margin: 0;
 }
 
@@ -14,8 +15,6 @@ ul {
 li a:link {
   color: #2a52be;
   text-decoration: none;
-  /*border-top: 2px solid #2a52be;
-  border-bottom: 2px solid #2a52be;*/
 }
 
 li a:hover {
@@ -47,6 +46,10 @@ footer {
   padding: 20px;
   justify-content: space-evenly;
   font-family: Helvetica;
+}
+
+#cerulean-nav li {
+  padding: 10px;
 }
 
 #soundcloud {
