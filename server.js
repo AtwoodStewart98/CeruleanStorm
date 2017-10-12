@@ -40,7 +40,6 @@ passport.use(
       callbackURL: "/auth/callback"
     },
     (accessToken, refreshToken, extraParams, profile, done) => {
-      console.log(profile);
       const db = app.get("db");
       db.getUserByAuthId([profile._json.sub]).then((user, err) => {
         console.log(`INITIAL: ${user}`);
@@ -77,13 +76,11 @@ app.get(
   "/auth/callback",
   passport.authenticate("auth0", { successRedirect: "/" }),
   (req, res) => {
-    console.log("Server:", req.user);
     res.status(200).json(req.user);
   }
 );
 
 app.get("/auth/me", (req, res) => {
-  console.log("auth me", req.user);
   if (!req.user) return res.status(401).json({ err: "User Not Authenticated" });
   res.status(200).json(req.user);
 });
@@ -94,12 +91,26 @@ app.get("/auth/logout", (req, res) => {
 });
 
 app.get("/writing-forum/writing", (req, res, next) => {
-  console.log("Made it");
   const db = app.get("db");
   db
     .getForumPosts()
     .then(response => res.status(200).json(response))
     .catch(error => console.log("Error"));
+});
+
+app.post("/writing-forum/writing", (req, res, next) => {
+  const { username, text } = req.body;
+  console.log("/////////////////////");
+  console.log(username, text);
+  console.log("/////////////////////");
+  const db = app.get("db");
+  db
+    .postForumPost([username, text])
+    .then(response => {
+      console.log(response);
+      res.status(200).json(response);
+    })
+    .catch(error => console.log("Error: ", error));
 });
 
 app.listen(port, () => {

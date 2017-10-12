@@ -7,6 +7,13 @@
     <p ng-if="!user.authid">
       Consider becoming a member to view works written by and for content creators here!
     </p>
+    <p ng-if="user.authid">
+      Welcome {{user.username}}!
+    </p>
+  </div>
+  <div ng-if="user.authid">
+    <button type="button" ng-click="createPost(user.username, item)">Submit Your Work Here!</button>
+    <input ng-model="item" type="text" placeholder="Write here..." />
   </div>
 </section>
 <section class="forum-posts" ng-if="user.authid" ng-repeat="item in posts">
