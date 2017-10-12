@@ -22,13 +22,19 @@ angular
       })
       .state("writing", {
         url: "/writing-forum",
-        templateUrl: "./components/writing/writingTmpl.html",
-        controller: "writingCtrl"
+        templateUrl: "./components/writing/writingTmpl.html"
       })
       .state("forum", {
         url: "/writing-forum/writing",
         templateUrl: "./components/writing/forum/forumTmpl.html",
-        controller: "writingCtrl"
+        controller: "writingCtrl",
+        resolve: {
+          user: loginSrvc =>
+            loginSrvc
+              .getUser()
+              .then(resp => resp.data)
+              .catch(err => err)
+        }
       })
       .state("login", {
         url: "/login",

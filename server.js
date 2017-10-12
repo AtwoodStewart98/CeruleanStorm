@@ -49,7 +49,7 @@ passport.use(
           db
             .createUserByAuth([profile.displayName, profile._json.sub])
             .then((user, err) => {
-              console.log(`USER CREATED: ${user[0]}`);
+              console.log(`USER CREATED: ${JSON.stringify(user[0])}`);
               return done(err, user[0]);
             });
         } else {
@@ -62,10 +62,12 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
+  console.log("serializeUser: ", user);
   done(null, user);
 });
 
 passport.deserializeUser((obj, done) => {
+  console.log("deserializeUser: ", obj);
   done(null, obj);
 });
 
@@ -81,7 +83,7 @@ app.get(
 );
 
 app.get("/auth/me", (req, res) => {
-  console.log("Hit");
+  console.log("auth me", req.user);
   if (!req.user) return res.status(401).json({ err: "User Not Authenticated" });
   res.status(200).json(req.user);
 });
