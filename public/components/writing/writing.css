@@ -14,16 +14,16 @@
   text-align: center;
 }
 
-.forum-selectors {
+.writing-selectors {
   display: flex;
   justify-content: flex-end;
 }
 
-.forum-selectors p {
+.writing-selectors p {
   padding: 15px;
 }
 
-.forum-selectors p a {
+.writing-selectors p a {
   text-decoration: none;
   font-family: sans-serif;
   color: #fff;

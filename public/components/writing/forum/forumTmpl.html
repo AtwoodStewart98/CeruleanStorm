@@ -9,8 +9,7 @@
     </p>
   </div>
 </section>
-<!-- Include ng-if user.authid when working -->
-<section class="forum-posts" ng-repeat="item in posts">
+<section class="forum-posts" ng-if="user.authid" ng-repeat="item in posts">
   <div>
     <h1>{{item.user}}</h1>
     <p>
