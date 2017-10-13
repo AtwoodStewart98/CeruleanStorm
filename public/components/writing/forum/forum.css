@@ -22,14 +22,42 @@
   text-align: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .forum-posts {
+  padding-bottom: 30px;
+  max-width: 390px;
+  max-height: 260px;
+  overflow: scroll;
+  background-color: #fff;
+}
+
+/*.forum-posts {
   margin: 0 auto;
   padding-bottom: 50px;
   width: 980px;
   background-color: #032f5a;
-  color: #fff;
+}
+
+.forum-posts div {
+  max-width: 350px;
+  margin: 0px 20px 20px 20px;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .forum-posts h1 {
   margin-top: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
 }
+
+.forum-posts p {
+  font-family: Helvetica;
+  line-height: 1.5;
+}*/
