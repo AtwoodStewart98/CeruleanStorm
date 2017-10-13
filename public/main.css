@@ -93,3 +93,9 @@ footer {
   color: #a9a9a9;
   padding: 10px 0 20px 0;
 }
+
+.sub-footer button {
+  color: #000;
+  background-color: #000;
+  border: none;
+}

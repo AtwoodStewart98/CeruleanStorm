@@ -12,8 +12,10 @@
     </p>
   </div>
   <div class="writers-block" ng-if="user.authid">
-    <button type="button" ng-click="createPost(user.username, item)">Submit Your Work Here!</button>
-    <input ng-model="item" type="text" placeholder="Write here..." />
+    <div>
+      <button type="button" ng-click="createPost(user.username, item)">Create new post</button>
+      <textarea ng-model="item" type="text" placeholder="Write here..." /></textarea>
+    </div>
   </div>
 </section>
 <div class="container">

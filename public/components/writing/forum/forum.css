@@ -22,6 +22,35 @@
   text-align: center;
 }
 
+.writers-block div {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.writers-block button {
+  border: none;
+  border-radius: 5px;
+  margin-left: 24px;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.writers-block textarea {
+  display: block;
+  margin-left: 24px;
+  width: 500px;
+  padding: 10px 10px 30px;
+  font-size: 12px;
+  wrap: soft;
+  overflow: scroll;
+}
+
+.writers-block ::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
 .container {
   display: flex;
   flex-direction: row;
