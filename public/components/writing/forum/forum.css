@@ -1,3 +1,19 @@
+#forum-head {
+  color: #b0e8ff;
+  text-shadow: #000 3px 3px 0, #000 2px -2px 0, #000 -2px 2px 0,
+    #000 -1px -1px 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+#consideration-msg {
+  line-height: 1.5;
+}
+
+#login-link {
+  color: #b0e8ff;
+  text-decoration: underline;
+}
+
 .writers-block {
   margin: 0 auto;
   padding-bottom: 50px;

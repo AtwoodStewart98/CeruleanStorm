@@ -1,11 +1,11 @@
 <section>
   <div class="writers-block">
-    <h1>WRITING</h1>
+    <h1 id="forum-head">WRITING</h1>
     <p ng-if="user.authid">
       Browse here to read works written by and for content creators!
     </p>
-    <p ng-if="!user.authid">
-      Consider becoming a member to view works written by and for content creators here!
+    <p id="consideration-msg" ng-if="!user.authid">
+      Consider <a id="login-link" href="/auth">becoming a member</a> to view works written by and for content creators here!
     </p>
     <p ng-if="user.authid">
       Welcome, {{user.username}}!
