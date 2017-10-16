@@ -6,7 +6,7 @@
       <form name="form">
         <img style="width: 50px;" ngf-thumbnail="image">
         <button name="image" ngf-select ng-model="image">Upload image</button>
-        <button ng-click="submit(image)">Submit</button>
+        <button ng-click="submit(image, user.authid)">Submit</button>
       </form>
     </div>
     <div id="writing-title">

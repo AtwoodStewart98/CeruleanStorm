@@ -6,15 +6,7 @@ const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const config = require(`${__dirname}/config.js`);
-const {
-  secret,
-  dbUser,
-  database,
-  domain,
-  clientID,
-  clientSecret,
-  uploadImages
-} = config;
+const { secret, dbUser, database, domain, clientID, clientSecret } = config;
 
 const port = 3000;
 
@@ -106,7 +98,14 @@ app.get("/writing-forum/writing", (req, res, next) => {
     .catch(error => console.log("Error"));
 });
 
-app.post("/api/images", uploadImages);
+app.post("/api/images", (req, res) => {
+  console.log(req.body[0]);
+  console.log(req.session.passport.user.authid);
+  req.app
+    .get("db")
+    .upload_pic([req.body[0], req.session.passport.user.authid])
+    .then(res.status(200).json(response => response));
+});
 
 app.post("/writing-forum/writing", (req, res, next) => {
   const { username, text } = req.body;
