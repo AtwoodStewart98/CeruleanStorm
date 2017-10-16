@@ -3,7 +3,11 @@
     <div class="writing-selectors">
       <p><a href="#">Search</a></p>
       <p><a href="#">Members</a></p>
-      <p><a href="#">Profile Pic</a></p>
+      <form name="form">
+        <img style="width: 50px;" ngf-thumbnail="image">
+        <button name="image" ngf-select ng-model="image">Upload image</button>
+        <button ng-click="submit(image)">Submit</button>
+      </form>
     </div>
     <div id="writing-title">
       <h1>CERULEAN <br />FORUM</h1>

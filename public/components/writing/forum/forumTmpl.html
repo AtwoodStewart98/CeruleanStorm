@@ -22,6 +22,7 @@
   <div class="" ng-if="user.authid" ng-repeat="item in posts">
     <div class="forum-posts">
       <h1>{{item.user_name}}</h1>
+      <img style="width:50px" ng-src="{{item.user_profileimg}}" />
       <p>
         {{item.written_text}}
       </p>

@@ -9,6 +9,20 @@
   <link rel="stylesheet" href="./components/writing/forum/forum.css" />
   <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDxQnMbTZt2x_jigDVH7llotgT82WNtpOs",
+  authDomain: "cerulean-storm.firebaseapp.com",
+  databaseURL: "https://cerulean-storm.firebaseio.com",
+  projectId: "cerulean-storm",
+  storageBucket: "cerulean-storm.appspot.com",
+  messagingSenderId: "645977343742"
+};
+firebase.initializeApp(config);
+</script>
 </head>
 <body ng-controller="mainCtrl">
   <div class="nav-header">
@@ -51,8 +65,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
   <script src="./router.js"></script>
   <script src="./mainCtrl.js"></script>
+  <script src="./ng-file-upload.js"></script>
   <script src="./components/login/loginCtrl.js"></script>
   <script src="./components/login/loginSrvc.js"></script>
   <script src="./components/writing/writingCtrl.js"></script>
   <script src="./components/writing/writingSrvc.js"></script>
+  <script src="./components/writing/forum/forumCtrl.js"></script>
+  <script src="./components/writing/forum/forumSrvc.js"></script>
 </html>

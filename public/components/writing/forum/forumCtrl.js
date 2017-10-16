@@ -1,15 +1,8 @@
 angular
   .module("ceruleanstorm")
-  .controller("forumCtrl", function($scope, forumSrvc, user) {
-    console.log("controller");
-    $scope.createPost = function(text) {
-      console.log(text);
-      console.log("Controller hit");
-      forumSrvc
-        .postForum(text)
-        .then(resp => resp)
-        .catch(err => err);
+  .controller("forumCtrl", function($scope, forumSrvc) {
+    $scope.submit = function(file) {
+      console.log(file);
+      forumSrvc.uploadImage(file);
     };
-
-    $scope.user = user.data && user.data.err ? user.data.err : user;
   });

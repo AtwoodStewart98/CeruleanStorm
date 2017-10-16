@@ -1,5 +1,5 @@
 angular
-  .module("ceruleanstorm", ["ui.router"])
+  .module("ceruleanstorm", ["ui.router", "ngFileUpload"])
   .config(($urlRouterProvider, $stateProvider) => {
     $urlRouterProvider.otherwise("/");
     $stateProvider
@@ -22,7 +22,8 @@ angular
       })
       .state("writing", {
         url: "/writing-forum",
-        templateUrl: "./components/writing/writingTmpl.html"
+        templateUrl: "./components/writing/writingTmpl.html",
+        controller: "forumCtrl"
       })
       .state("forum", {
         url: "/writing-forum/writing",
