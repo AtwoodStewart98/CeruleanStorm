@@ -28,13 +28,13 @@
   padding: 10% 0;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
-  color: #fff;
+  color: #dfdfdf;
   width: 260px;
-  background-color: #292929;
+  background-color: #000;
 }
 
 .music-box {
   padding: 40px 60px;
   margin: 20px 0px 60px;
-  background-color: #000;
+  background-color: #032f5a;
 }

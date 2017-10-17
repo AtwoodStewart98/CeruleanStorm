@@ -1,3 +1,13 @@
+#image-upload-button {
+  font-size: 14px;
+  background-color: #b0e8ff;
+}
+
+#image-submit-button {
+  font-size: 14px;
+  background-color: #b0e8ff;
+}
+
 #writing-title {
   color: #b0e8ff;
   text-shadow: #000 3px 3px 0, #000 2px -2px 0, #000 -2px 2px 0,
@@ -33,6 +43,11 @@
   text-decoration: none;
   font-family: sans-serif;
   color: #fff;
+}
+
+.writing-selectors form {
+  padding: 15px;
+  margin: auto 0;
 }
 
 .forum-views {

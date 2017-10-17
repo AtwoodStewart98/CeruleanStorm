@@ -31,7 +31,7 @@ a {
 #contact-btn {
   font-size: 18px;
   padding: 10px 15px;
-  background-color: #e7e7e7;
+  background-color: #dfdfdf;
   border: none;
   border-radius: 5px;
 }
@@ -45,9 +45,9 @@ a {
 #short-message {
   width: 226px;
   height: 34px;
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #fff;
+  background-color: #032f5a;
+  color: #dfdfdf;
+  border: 2px solid #dfdfdf;
   border-radius: 2px;
   margin-bottom: 10px;
 }
@@ -55,9 +55,9 @@ a {
 #wide-message {
   width: 462px;
   height: 34px;
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #fff;
+  background-color: #032f5a;
+  color: #dfdfdf;
+  border: 2px solid #dfdfdf;
   border-radius: 2px;
   margin-bottom: 10px;
 }
@@ -65,34 +65,39 @@ a {
 #widest-message {
   width: 462px;
   height: 144px;
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #fff;
+  background-color: #032f5a;
+  color: #dfdfdf;
+  border: 2px solid #dfdfdf;
   border-radius: 2px;
   margin-bottom: 10px;
 }
 
 .about-bg {
-  color: #fff;
+  color: #f7f7f7;
   display: flex;
   justify-content: center;
 }
 
 .about-box {
   max-width: 500px;
-  background-color: #000;
+  background-color: #032f5a;
   font-family: sans-serif;
   font-size: 18px;
   padding: 30px 50px 30px 50px;
   border-radius: 20px;
+  border: 2px solid #000;
+}
+
+.about-box p {
+  line-height: 1.5;
 }
 
 .cerulean-contact {
-  color: #fff;
-  background-color: #000;
+  color: #dfdfdf;
+  background-color: #032f5a;
   display: flex;
   justify-content: center;
-  margin: 150px 0px 20px;
+  margin: 100px 0px 20px;
   padding: 50px 0px;
   border-top: 1px solid #a9a9a9;
   border-bottom: 1px solid #a9a9a9;
@@ -112,7 +117,7 @@ a {
 }
 
 .message-cerulean ::-webkit-input-placeholder {
-  color: #fff;
+  color: #dfdfdf;
   font-size: 16px;
   padding-left: 5px;
 }

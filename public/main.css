@@ -2,7 +2,7 @@ body {
   background-image: url("https://nebula.wsimg.com/6516da26b7ac3d5d0be0b0ad24bd7d1f?AccessKeyId=9D31EB17C2676763FE5A&disposition=0&alloworigin=1");
   background-size: 100%;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: #032f5a;
   margin: 0;
 }
 
@@ -13,31 +13,31 @@ ul {
 }
 
 li a:link {
-  color: #2a52be;
+  color: #dfdfdf;
   text-decoration: none;
 }
 
 li a:hover {
   color: #fff;
   transition: 0.5s;
-  background-color: #2a52be;
+  background-color: #000;
 }
 
 li a:visited {
-  color: #2a52be;
+  color: #dfdfdf;
   text-decoration: none;
 }
 
 li a:visited:hover {
   color: #fff;
   transition: 0.5s;
-  background-color: #2a52be;
+  background-color: #000;
 }
 
 footer {
   text-align: center;
-  background-color: #000;
-  color: #fff;
+  background-color: #032f5a;
+  color: #a9a9a9;
   padding-top: 30px;
 }
 
@@ -85,17 +85,17 @@ footer {
 }
 
 .nav-header {
-  background-color: #000;
+  background-color: #032f5a;
 }
 
 .sub-footer {
   font-size: 12px;
-  color: #a9a9a9;
+  color: #6b6b6b;
   padding: 10px 0 20px 0;
 }
 
 .sub-footer button {
-  color: #000;
-  background-color: #000;
+  color: #032f5a;
+  background-color: #032f5a;
   border: none;
 }

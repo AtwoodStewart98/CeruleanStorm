@@ -6,6 +6,7 @@ const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const config = require(`${__dirname}/config.js`);
+const sendgrid = require("sendgrid")();
 const { secret, dbUser, database, domain, clientID, clientSecret } = config;
 
 const port = 3000;
@@ -117,6 +118,23 @@ app.post("/writing-forum/writing", (req, res, next) => {
       res.status(200).json(response);
     })
     .catch(error => console.log("Error: ", error));
+});
+
+app.get("/contact", function(req, res) {
+  sendgrid.send(
+    {
+      to: "contact@ceruleanstorm.com",
+      from: req.body.email,
+      subject: req.body.subject,
+      text: req.body.message
+    },
+    function(err, json) {
+      if (err) {
+        return res.send("Error");
+      }
+      res.send("Email sent");
+    }
+  );
 });
 
 app.listen(port, () => {

@@ -4,9 +4,9 @@
       <p><a href="#">Search</a></p>
       <p><a href="#">Members</a></p>
       <form name="form">
-        <img style="width: 50px;" ngf-thumbnail="image">
-        <button name="image" ngf-select ng-model="image">Upload image</button>
-        <button ng-click="submit(image, user.authid)">Submit</button>
+        <img style="width:50px;height:50px" ngf-thumbnail="image">
+        <button id="image-upload-button" name="image" ngf-select ng-model="image">Upload image</button>
+        <button id="image-submit-button" ng-click="submit(image, user.authid)">Submit</button>
       </form>
     </div>
     <div id="writing-title">
