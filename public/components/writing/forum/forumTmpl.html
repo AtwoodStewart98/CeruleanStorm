@@ -21,9 +21,11 @@
 <div class="container">
   <div class="" ng-if="user.authid" ng-repeat="item in posts">
     <div class="forum-posts">
-      <h1>{{item.user_name}}</h1>
-      <div id="profile-crop">
-        <img ng-src="{{item.user_profileimg}}" />
+      <div class="forum-flex">
+        <h1>{{item.user_name}}</h1>
+        <div id="profile-crop">
+          <img ng-src="{{item.user_profileimg}}" />
+        </div>
       </div>
       <p>
         {{item.written_text}}
