@@ -1,0 +1,16 @@
+#art-title {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 52px;
+}
+
+.art-background {
+  width: 980px;
+  margin: 0 auto;
+  background-color: #f09;
+}
+
+.art-background h1 {
+  margin: 0;
+  padding: 30px 0;
+}

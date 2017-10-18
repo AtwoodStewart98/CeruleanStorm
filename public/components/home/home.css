@@ -4,6 +4,7 @@ h4 {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 #cerulean-title {
@@ -19,7 +20,7 @@ a {
 }
 
 #about-title {
-  font-family: "Acme", sans-serif;
+  font-family: "Cabin", sans-serif;
   text-align: center;
   font-size: 32px;
 }

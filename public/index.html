@@ -5,10 +5,12 @@
   <link rel="stylesheet" href="main.css" />
   <link rel="stylesheet" href="./components/home/home.css" />
   <link rel="stylesheet" href="./components/artists-music/music.css" />
+  <link rel="stylesheet" href="./components/visual-art/art.css" />
   <link rel="stylesheet" href="./components/writing/writing.css" />
   <link rel="stylesheet" href="./components/writing/forum/forum.css" />
   <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 
   <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
   <script>
@@ -28,11 +30,11 @@ firebase.initializeApp(config);
   <div class="nav-header">
     <nav>
       <ul id="cerulean-nav">
-        <li><a ui-sref="home">Home</a></li>
-        <li><a ui-sref="music">Music</a></li>
-        <li><a ui-sref="art">Visual Art</a></li>
-        <li><a ui-sref="writing">Writing Forum</a></li>
-        <li><a href="/auth">Login/Sign Up</a></li>
+        <a ui-sref="home"><li>Home</li></a>
+        <a ui-sref="music"><li>Music</li></a>
+        <a ui-sref="art"><li>Visual Art</li></a>
+        <a ui-sref="writing"><li>Forum</li></a>
+        <a href="/auth"><li>Sign In</li></a>
       </ul>
     </nav>
   </div>
