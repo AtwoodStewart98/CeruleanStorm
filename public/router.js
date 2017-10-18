@@ -5,7 +5,8 @@ angular
     $stateProvider
       .state("home", {
         url: "/",
-        templateUrl: "./components/home/homeTmpl.html"
+        templateUrl: "./components/home/homeTmpl.html",
+        controller: "homeCtrl"
       })
       .state("music", {
         url: "/music",

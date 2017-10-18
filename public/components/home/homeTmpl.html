@@ -22,21 +22,23 @@
         You can submit your music or art for review here. Please only submit your original work.
       </p>
       <div style="text-align: center">
-        <button type="button">Submit</button>
+        <button id="contact-submit-btn" type="button">Submit</button>
       </div>
     </div>
     <div class="message-cerulean">
       <div>
-        <input id="short-message" type="text" style="font-size:16px" placeholder="Name" />
-        <input id="short-message" type="text" style="font-size:16px" placeholder="Email" />
+        <input id="short-message" ng-model="name" type="text" style="font-size:16px" placeholder="Name" />
+        <input id="short-message" ng-model="email" type="text" style="font-size:16px" placeholder="Email" />
       </div>
       <div>
-        <input id="wide-message" type="text" style="font-size:16px" placeholder="Subject" />
+        <input id="wide-message" ng-model="subject" type="text" style="font-size:16px" placeholder="Subject" />
       </div>
       <div>
-        <textarea id="widest-message" type="text" style="font-size:16px" placeholder="Message"></textarea>
+        <textarea id="widest-message" ng-model="message" type="text" style="font-size:16px" placeholder="Message"></textarea>
       </div>
-      <button type="button">Send</button>
+      <div style="text-align: center">
+        <button id="contact-send-btn" ng-click="sendEmail(name, email, subject, message)" type="button">Send</button>
+      </div>
     </div>
   </div>
 </section>

@@ -6,8 +6,18 @@ const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const config = require(`${__dirname}/config.js`);
-const sendgrid = require("sendgrid")();
-const { secret, dbUser, database, domain, clientID, clientSecret } = config;
+const {
+  secret,
+  dbUser,
+  database,
+  domain,
+  clientID,
+  clientSecret,
+  sendgridAPI
+} = config;
+const sendgrid = require("@sendgrid/mail");
+
+sendgrid.setApiKey(sendgridAPI);
 
 const port = 3000;
 
@@ -120,13 +130,15 @@ app.post("/writing-forum/writing", (req, res, next) => {
     .catch(error => console.log("Error: ", error));
 });
 
-app.get("/contact", function(req, res) {
+app.post("/contact", (req, res, next) => {
+  console.log(req.body);
   sendgrid.send(
     {
       to: "contact@ceruleanstorm.com",
       from: req.body.email,
       subject: req.body.subject,
-      text: req.body.message
+      text: `From: ${req.body.name} Message: ${req.body.message}`,
+      html: `<p>From: ${req.body.name} </br> Message: ${req.body.message}</p>`
     },
     function(err, json) {
       if (err) {
