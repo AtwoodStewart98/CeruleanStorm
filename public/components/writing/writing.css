@@ -1,16 +1,16 @@
 #image-upload-button {
   font-size: 14px;
-  background-color: #b0e8ff;
+  background-color: #dfdfdf;
 }
 
 #image-submit-button {
   font-size: 14px;
-  background-color: #b0e8ff;
+  background-color: #dfdfdf;
 }
 
 #writing-title {
-  color: #b0e8ff;
-  text-shadow: #000 3px 3px 0, #000 2px -2px 0, #000 -2px 2px 0,
+  color: #dfdfdf;
+  text-shadow: #000 2px 2px 0, #000 2px -1px 0, #000 -1px 2px 0,
     #000 -1px -1px 0;
   -webkit-font-smoothing: antialiased;
 }
@@ -18,14 +18,14 @@
 .forum-box {
   margin: 0 auto;
   width: 980px;
-  background-color: #032f5a;
+  background-color: #0a8595;
   padding-bottom: 120px;
 }
 
 .forum-box h1 {
   margin-top: 0;
   padding-top: 50px;
-  font-family: "Acme", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 72px;
   text-align: center;
 }
@@ -60,7 +60,7 @@
 .forum-views div {
   padding: 50px;
   margin: 0 40px;
-  background-color: #fff;
+  background-color: #dfdfdf;
   border: 1px solid #a9a9a9;
   border-radius: 3px;
 }

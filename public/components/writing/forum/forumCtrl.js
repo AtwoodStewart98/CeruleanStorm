@@ -2,8 +2,6 @@ angular
   .module("ceruleanstorm")
   .controller("forumCtrl", function($scope, forumSrvc, user) {
     $scope.createPost = function(username, text) {
-      console.log(text, username);
-      console.log("Controller hit");
       forumSrvc.postForum(username, text);
     };
 

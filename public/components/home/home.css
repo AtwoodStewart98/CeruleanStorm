@@ -39,7 +39,7 @@ a {
 
 #contact-head {
   font-size: 32px;
-  font-family: "Acme", sans-serif;
+  font-family: "Cabin", sans-serif;
   text-align: center;
 }
 
@@ -105,8 +105,14 @@ a {
   border: 2px solid #000;
 }
 
+.about-box h4 {
+  font-size: 24px;
+  font-family: "Cabin", sans-serif;
+}
+
 .about-box p {
   line-height: 1.5;
+  font-family: "Roboto", sans-serif;
 }
 
 .cerulean-contact {
@@ -127,6 +133,11 @@ a {
 .contact-format {
   max-width: 462px;
   padding-right: 20px;
+}
+
+.contact-format h4,
+p {
+  font-family: "Roboto", sans-serif;
 }
 
 .message-cerulean {

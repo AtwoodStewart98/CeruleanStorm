@@ -5,7 +5,6 @@ angular.module("ceruleanstorm").service("forumSrvc", function($http) {
       .then(response => response)
       .catch(error => error);
   this.postForum = (username, text) => {
-    console.log(username, text);
     return $http
       .post("/writing-forum/writing", { username, text })
       .then(response => response)
