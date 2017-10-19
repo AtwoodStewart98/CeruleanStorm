@@ -19,7 +19,7 @@
   </div>
 </section>
 <div class="container">
-  <div class="" ng-if="user.authid" ng-repeat="item in posts">
+  <div class="" ng-if="user.authid" ng-repeat="item in posts | orderBy : '-id'">
     <div class="forum-posts">
       <div class="forum-flex">
         <h1>{{item.user_name}}</h1>
