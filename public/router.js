@@ -18,9 +18,19 @@ angular
           pageTitle: "Cerulean Storm | Music"
         }
       })
-      .state("artist", {
-        url: "/music/:artist",
-        templateUrl: "./components/artists-music/artistTmpl.html"
+      .state("cinema-for-the-blind", {
+        url: "/music/cinema-for-the-blind",
+        templateUrl: "./components/artists-music/artists/c4bTmpl.html",
+        data: {
+          pageTitle: "Cerulean Storm | Cinema for the Blind"
+        }
+      })
+      .state("nessen", {
+        url: "/music/nessen",
+        templateUrl: "./components/artists-music/artists/nessenTmpl.html",
+        data: {
+          pageTitle: "Cerulean Storm | NesseN"
+        }
       })
       .state("art", {
         url: "/visual-art",
