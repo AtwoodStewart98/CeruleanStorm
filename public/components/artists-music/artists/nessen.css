@@ -1,0 +1,56 @@
+#nessen-title {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 54px;
+  font-family: "Cabin", sans-serif;
+  color: #f7f7f7;
+}
+
+#nessen-sc {
+  padding-left: 5px;
+  height: 50px;
+  width: auto;
+}
+
+#nessen-fb {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  height: 40px;
+  width: auto;
+}
+
+#nessen-yt {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  height: 40px;
+  width: auto;
+}
+
+.nessen-bg {
+  background-image: url("https://static.wixstatic.com/media/1272ca_ab40090e8bc54f4d86e34303c353ae3f~mv2.jpg/v1/fill/w_1191,h_252,al_c,q_80,usm_0.66_1.00_0.01/1272ca_ab40090e8bc54f4d86e34303c353ae3f~mv2.webp");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+.nessen-center {
+  margin: 0 auto;
+  width: 980px;
+}
+
+.nessen-center nav {
+  padding-bottom: 150px;
+}
+
+.nessen-about {
+  background-color: #000;
+}
+
+.nessen-center p {
+  margin: 0;
+  padding: 10px;
+  color: #f7f7f7;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
