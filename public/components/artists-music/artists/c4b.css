@@ -20,7 +20,7 @@
 
 .cinema-bg {
   background-image: url("https://static.wixstatic.com/media/1272ca_c8ad78c25d024e988b790ff336bee787~mv2.jpg/v1/fill/w_920,h_205,al_c,q_80/1272ca_c8ad78c25d024e988b790ff336bee787~mv2.webp");
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-color: #72587f;
 }
@@ -28,9 +28,24 @@
 .cinema-center {
   margin: 0 auto;
   width: 980px;
-  overflow: hidden;
 }
 
 .cinema-center nav {
-  padding-bottom: 200px;
+  padding-bottom: 150px;
+}
+
+.cinema-about {
+  background-color: #72587f;
+}
+
+.cinema-center p {
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+
+.cinema-center iframe {
+  padding: 10px;
 }
