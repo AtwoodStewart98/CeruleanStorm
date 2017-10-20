@@ -10,6 +10,7 @@ const {
   secret,
   dbUser,
   database,
+  liveServerPostgres,
   domain,
   clientID,
   clientSecret,
@@ -30,7 +31,7 @@ app.use("/", express.static(`${__dirname}/public`));
 app.use(bodyParser());
 app.use(cors());
 
-massive(connectionString).then(db => app.set("db", db));
+massive(liveServerPostgres).then(db => app.set("db", db));
 
 app.use(
   session({

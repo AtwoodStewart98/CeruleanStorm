@@ -37,8 +37,7 @@ angular
         templateUrl: "./components/visual-art/artTmpl.html",
         data: {
           pageTitle: "Cerulean Storm | Visual Art"
-        },
-        controller: "artCtrl"
+        }
       })
       .state("writing", {
         url: "/writing-forum",
