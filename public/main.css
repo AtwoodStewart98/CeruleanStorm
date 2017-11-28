@@ -1,9 +1,10 @@
 body {
   background-image: url("https://nebula.wsimg.com/6516da26b7ac3d5d0be0b0ad24bd7d1f?AccessKeyId=9D31EB17C2676763FE5A&disposition=0&alloworigin=1");
-  background-size: 100%;
+  background-size: 1300px auto;
+  background-position-x: center;
   background-repeat: no-repeat;
   background-color: #032f5a;
-  margin: 0;
+  margin: 0 auto;
 }
 
 ul {
@@ -56,8 +57,94 @@ footer {
 
 #cerulean-nav li {
   min-width: 100px;
-  padding: 20px 20px;
+  padding: 20px;
   text-align: center;
+}
+
+#cerulean-burger {
+  display: none;
+  position: relative;
+  top: -10px;
+  left: 20px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#cerulean-burger input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#cerulean-burger span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #b9ebff;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  -webkit-transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#cerulean-burger span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#cerulean-burger span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#cerulean-burger input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg), translate(-2px, -1px);
+  background: #000;
+}
+
+#cerulean-burger input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#cerulean-burger input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg), translate(0, -1px);
+}
+
+#cerulean-burger-nav {
+  display: none;
+  position: absolute;
+  width: 200px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 150px;
+  background: #6b6b6b;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0%);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#cerulean-burger-nav li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#cerulean-burger input:checked ~ ul {
+  transform: none;
 }
 
 #soundcloud {
@@ -106,4 +193,32 @@ footer {
   color: #032f5a;
   background-color: #032f5a;
   border: none;
+}
+
+@media (min-width: 1300px) {
+  body {
+    background-size: 100%;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  body {
+    width: 100%;
+    background-size: 250%;
+  }
+  body .ng-scope {
+    width: 100%;
+  }
+  #cerulean-nav li {
+    display: none;
+  }
+  #cerulean-burger {
+    display: block;
+  }
+  #cerulean-burger-nav {
+    display: block;
+  }
+  .nav-header {
+    height: 75px;
+  }
 }

@@ -3,7 +3,7 @@
 <head>
   <title state-title></title>
   <link rel="icon" href="https://pbs.twimg.com/profile_images/894105803283734528/qlH13EQm.jpg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="main.css" />
   <link rel="stylesheet" href="./components/home/home.css" />
   <link rel="stylesheet" href="./components/artists-music/music.css" />
@@ -43,6 +43,19 @@ firebase.initializeApp(config);
         <a href="/auth"><li>Sign In</li></a>
       </ul>
     </nav>
+    <div id="cerulean-burger">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="cerulean-burger-nav">
+        <a ui-sref="home"><li>Home</li></a>
+        <a ui-sref="music"><li>Music</li></a>
+        <a ui-sref="art"><li>Visual Art</li></a>
+        <a ui-sref="writing"><li>Forum</li></a>
+        <a href="/auth"><li>Sign In</li></a>
+      </ul>
+    </div>
   </div>
   <ui-view></ui-view>
   <footer>
