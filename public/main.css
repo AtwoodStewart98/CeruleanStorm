@@ -62,10 +62,10 @@ footer {
 }
 
 #cerulean-burger {
-  display: block;
+  display: none;
   position: relative;
-  top: 50px;
-  left: 50px;
+  top: -10px;
+  left: 20px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -124,12 +124,13 @@ footer {
 }
 
 #cerulean-burger-nav {
+  display: none;
   position: absolute;
-  width: 300px;
-  margin: -100px 0 0 50px;
+  width: 200px;
+  margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 150px;
-  background: #fff;
+  background: #6b6b6b;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
@@ -209,7 +210,15 @@ footer {
     width: 100%;
   }
   #cerulean-nav li {
-    padding: 10px;
-    min-width: 30vw;
+    display: none;
+  }
+  #cerulean-burger {
+    display: block;
+  }
+  #cerulean-burger-nav {
+    display: block;
+  }
+  .nav-header {
+    height: 75px;
   }
 }
